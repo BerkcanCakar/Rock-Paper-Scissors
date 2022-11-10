@@ -63,6 +63,19 @@ let computerScore=0;
 
 
 
+
+
+
+
+
+
+
+  
+
+
+
+
+/*
 const game=function(){
 
     for(let i =0;i<5;i++){
@@ -90,10 +103,4 @@ if(playerScore>computerScore){
 
 console.log(game() )
 
-
-
-
-
-
-
-  
+*/
