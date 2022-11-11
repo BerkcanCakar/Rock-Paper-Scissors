@@ -60,7 +60,21 @@ const getComputerChoice=function(){
 // buttons is a node list. It looks and acts much like an array.
 const buttons = document.querySelectorAll('button');
 
+buttons.forEach((button) => {
 
+  
+  button.addEventListener('click', () => {
+     
+     playRound(playerSelection=button.id,computerSelection=getComputerChoice())
+     console.log(playRound(playerSelection,computerSelection))
+    
+  });
+});
+
+
+/*
+
+BİRDEN FAZLA BUTONU AYNI ANDA AKTİF HALE GETİRME
 buttons.forEach((button) => {
 
   
@@ -71,7 +85,16 @@ buttons.forEach((button) => {
 
   });
 });
+*/
 
+/*
+BUTTONLARI AKTİF HALE GETİRME
+
+const a=document.querySelector('#rock')
+a.addEventListener('click',function(e){
+  playRound(playerSelection=a.id,computerSelection=getComputerChoice())
+  console.log(  playRound(playerSelection,computerSelection)  )
+})
 
  
 /*
