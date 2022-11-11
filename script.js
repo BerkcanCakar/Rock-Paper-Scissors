@@ -72,6 +72,8 @@ buttons.forEach((button) => {
 });
 
 
+let computerScore=0;
+let playerScore=0;
 /*
 
 BİRDEN FAZLA BUTONU AYNI ANDA AKTİF HALE GETİRME
