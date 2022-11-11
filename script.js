@@ -22,29 +22,30 @@ const getComputerChoice=function(){
   if(playerSelection===computerSelection){
     return `draw`
   }else if(playerSelection==='rock'&&computerSelection==='scissors'){
-     
+     playerScore++;
     return `rock beats scissors you win!`
   }
   else if(playerSelection==='rock'&&computerSelection==='paper'){
-    
+    computerScore++;
     return `paper beats rock you lose!`
 
   }else if(playerSelection==='paper'&&computerSelection==='rock'){
-    
+    playerScore++;
     return `paper beats rock you win!`
 
   }else if(playerSelection==='paper'&&computerSelection==='scissors'){
-    
+    computerScore++;
     return `scissors beats paper you lose!`
 
   }
    else if(playerSelection==='scissors'&&computerSelection==='rock'){
-    
+    computerScore++
     return `rock beats scissors you lose!`
 
   }else if(playerSelection==='scissors'&&computerSelection==='paper'){
-    
+    playerScore++;
     return `scissors beats paper you win!`
+  
   
   
 }
@@ -67,7 +68,6 @@ buttons.forEach((button) => {
      
      playRound(playerSelection=button.id,computerSelection=getComputerChoice())
      console.log(playRound(playerSelection,computerSelection))
-    
   });
 });
 
@@ -76,6 +76,13 @@ let computerScore=0;
 let playerScore=0;
 let scoreWindow = document.querySelector('.scores');
 
+
+/*
+function renderScore(playerScore,computerScore) {
+  scoreWindow.innerText = `${playerScore} - ${computerScore}`;
+}
+renderScore(playerScore,computerScore)
+*/
 /*
 
 BİRDEN FAZLA BUTONU AYNI ANDA AKTİF HALE GETİRME
