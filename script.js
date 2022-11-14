@@ -22,7 +22,7 @@ const getComputerChoice=function(){
   if(playerSelection===computerSelection){
     return `draw`
   }else if(playerSelection==='rock'&&computerSelection==='scissors'){
-     playerScore++;
+    playerScore++;
     return `rock beats scissors you win!`
   }
   else if(playerSelection==='rock'&&computerSelection==='paper'){
@@ -30,7 +30,7 @@ const getComputerChoice=function(){
     return `paper beats rock you lose!`
 
   }else if(playerSelection==='paper'&&computerSelection==='rock'){
-    playerScore++;
+  playerScore++;
     return `paper beats rock you win!`
 
   }else if(playerSelection==='paper'&&computerSelection==='scissors'){
@@ -39,7 +39,7 @@ const getComputerChoice=function(){
 
   }
    else if(playerSelection==='scissors'&&computerSelection==='rock'){
-    computerScore++
+    computerScore++;
     return `rock beats scissors you lose!`
 
   }else if(playerSelection==='scissors'&&computerSelection==='paper'){
@@ -47,19 +47,67 @@ const getComputerChoice=function(){
     return `scissors beats paper you win!`
   
   
-  
+
 }
+
+
 }
 
 
+const rockBtn=document.querySelector('#rock')
+const paperBtn=document.querySelector('#paper')
+const scissorsBtn=document.querySelector('#scissors')
+
+let computerScore=0;
+let playerScore=0;
+let scoreWindow = document.querySelector('.scores');
+ scoreWindow.innerHTML =playerScore + ' - ' + computerScore;
+
+
+rockBtn.addEventListener('click',function(){
+  playerSelection='rock'
+  computerSelection=getComputerChoice()
+  playRound()
+console.log(playRound(playerSelection,computerSelection))
+scoreWindow.innerHTML =playerScore + ' - ' + computerScore;
 
 
 
+
+})
+paperBtn.addEventListener('click',function(){
+  playerSelection='paper'
+  computerSelection=getComputerChoice()
+  playRound()
+console.log(playRound(playerSelection,computerSelection))
+scoreWindow.innerHTML =playerScore + ' - ' + computerScore;
+
+
+
+
+})
+scissorsBtn.addEventListener('click',function(){
+  playerSelection='scissors'
+  computerSelection=getComputerChoice()
+  playRound()
+console.log(playRound(playerSelection,computerSelection))
+
+scoreWindow.innerHTML =playerScore + ' - ' + computerScore;
+
+
+
+
+})
 
 
 
 // buttons is a node list. It looks and acts much like an array.
+/*
+
+
+
 const buttons = document.querySelectorAll('button');
+
 
 buttons.forEach((button) => {
 
@@ -68,22 +116,47 @@ buttons.forEach((button) => {
      
      playRound(playerSelection=button.id,computerSelection=getComputerChoice())
      console.log(playRound(playerSelection,computerSelection))
+
+     
   });
+
 });
 
 
-let computerScore=0;
-let playerScore=0;
-let scoreWindow = document.querySelector('.scores');
 
+  
+rockBtn.addEventListener('click',function(){
+  playRound(playerSelection=rockBtn.id,computerSelection=getComputerChoice())
+console.log(playRound(playerSelection,computerSelection))
+scoreWindow.innerHTML = playerScore + ' - ' + computerScore;
+
+
+})
+paperBtn.addEventListener('click',function(){
+  playRound(playerSelection=paperBtn.id,computerSelection=getComputerChoice())
+console.log(playRound(playerSelection,computerSelection))
+scoreWindow.innerHTML = playerScore + ' - ' + computerScore;
+
+
+})
+scissorsBtn.addEventListener('click',function(){
+  playRound(playerSelection=scissorsBtn.id,computerSelection=getComputerChoice())
+console.log(playRound(playerSelection,computerSelection))
+scoreWindow.innerHTML = playerScore + ' - ' + computerScore;
+
+
+})
+
+
+*/
 
 /*
+
+
 function renderScore(playerScore,computerScore) {
   scoreWindow.innerText = `${playerScore} - ${computerScore}`;
 }
 renderScore(playerScore,computerScore)
-*/
-/*
 
 BİRDEN FAZLA BUTONU AYNI ANDA AKTİF HALE GETİRME
 buttons.forEach((button) => {
