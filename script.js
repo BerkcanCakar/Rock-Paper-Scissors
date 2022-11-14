@@ -69,7 +69,8 @@ rockBtn.addEventListener('click',function(){
   computerSelection=getComputerChoice()
   playRound()
 console.log(playRound(playerSelection,computerSelection))
-scoreWindow.innerHTML =playerScore + ' - ' + computerScore;
+scoreWindow.innerText=playerScore + ' - ' + computerScore;
+
 
 
 
@@ -80,7 +81,8 @@ paperBtn.addEventListener('click',function(){
   computerSelection=getComputerChoice()
   playRound()
 console.log(playRound(playerSelection,computerSelection))
-scoreWindow.innerHTML =playerScore + ' - ' + computerScore;
+scoreWindow.innerText=playerScore + ' - ' + computerScore;
+
 
 
 
@@ -91,11 +93,7 @@ scissorsBtn.addEventListener('click',function(){
   computerSelection=getComputerChoice()
   playRound()
 console.log(playRound(playerSelection,computerSelection))
-
-scoreWindow.innerHTML =playerScore + ' - ' + computerScore;
-
-
-
+scoreWindow.innerText=playerScore + ' - ' + computerScore;
 
 })
 
