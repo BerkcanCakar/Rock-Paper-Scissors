@@ -23,28 +23,28 @@ const getComputerChoice=function(){
     return `draw`
   }else if(playerSelection==='rock'&&computerSelection==='scissors'){
     playerScore++;
-    return `rock beats scissors you win!`
+    return result.innerText= `rock beats scissors you win!`
   }
   else if(playerSelection==='rock'&&computerSelection==='paper'){
     computerScore++;
-    return `paper beats rock you lose!`
+    return result.innerText=`paper beats rock you lose!`
 
   }else if(playerSelection==='paper'&&computerSelection==='rock'){
   playerScore++;
-    return `paper beats rock you win!`
+    return result.innerText= `paper beats rock you win!`
 
   }else if(playerSelection==='paper'&&computerSelection==='scissors'){
     computerScore++;
-    return `scissors beats paper you lose!`
+    return result.innerText=`scissors beats paper you lose!`
 
   }
    else if(playerSelection==='scissors'&&computerSelection==='rock'){
     computerScore++;
-    return `rock beats scissors you lose!`
+    return result.innerText=`rock beats scissors you lose!`
 
   }else if(playerSelection==='scissors'&&computerSelection==='paper'){
     playerScore++;
-    return `scissors beats paper you win!`
+    return result.innerText=`scissors beats paper you win!`
   
   
 
@@ -57,11 +57,13 @@ const getComputerChoice=function(){
 const rockBtn=document.querySelector('#rock')
 const paperBtn=document.querySelector('#paper')
 const scissorsBtn=document.querySelector('#scissors')
+let scoreWindow = document.querySelector('.scores');
+const result=document.querySelector('.result')
+
 
 let computerScore=0;
 let playerScore=0;
-let scoreWindow = document.querySelector('.scores');
- scoreWindow.innerHTML =playerScore + ' - ' + computerScore;
+scoreWindow.innerHTML =playerScore + ' - ' + computerScore;
 
 
 rockBtn.addEventListener('click',function(){
@@ -84,10 +86,9 @@ console.log(playRound(playerSelection,computerSelection))
 scoreWindow.innerText=playerScore + ' - ' + computerScore;
 
 
-
-
-
 })
+
+
 scissorsBtn.addEventListener('click',function(){
   playerSelection='scissors'
   computerSelection=getComputerChoice()
@@ -96,6 +97,13 @@ console.log(playRound(playerSelection,computerSelection))
 scoreWindow.innerText=playerScore + ' - ' + computerScore;
 
 })
+
+
+
+function winner (){
+
+  
+}
 
 
 
