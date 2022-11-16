@@ -20,7 +20,7 @@ const getComputerChoice=function(){
 
  const playRound=function(playerSelection, computerSelection){
   if(playerSelection===computerSelection){
-    return `draw`
+    return result.innerText=`draw`
   }else if(playerSelection==='rock'&&computerSelection==='scissors'){
     playerScore++;
     return result.innerText= `rock beats scissors you win!`
@@ -63,7 +63,7 @@ const result=document.querySelector('.result')
 
 let computerScore=0;
 let playerScore=0;
-scoreWindow.innerHTML =playerScore + ' - ' + computerScore;
+scoreWindow.innerText =playerScore + ' - ' + computerScore;
 
 
 rockBtn.addEventListener('click',function(){
@@ -72,6 +72,8 @@ rockBtn.addEventListener('click',function(){
   playRound()
 console.log(playRound(playerSelection,computerSelection))
 scoreWindow.innerText=playerScore + ' - ' + computerScore;
+checkWinner(playerScore,computerScore)
+
 
 
 
@@ -84,6 +86,8 @@ paperBtn.addEventListener('click',function(){
   playRound()
 console.log(playRound(playerSelection,computerSelection))
 scoreWindow.innerText=playerScore + ' - ' + computerScore;
+checkWinner(playerScore,computerScore)
+
 
 
 })
@@ -95,16 +99,16 @@ scissorsBtn.addEventListener('click',function(){
   playRound()
 console.log(playRound(playerSelection,computerSelection))
 scoreWindow.innerText=playerScore + ' - ' + computerScore;
-
+checkWinner(playerScore,computerScore)
 })
 
 
 
-function winner (){
 
-  
+const checkWinner=function(playerScore,computerScore){
+  if(playerScore===5) { result.innerText=`You won ${playerScore} to ${computerScore} great job beating computer!`}
+  if(computerScore===5){  result.innerText=`You lost ${computerScore} to ${playerScore}`}
 }
-
 
 
 // buttons is a node list. It looks and acts much like an array.
