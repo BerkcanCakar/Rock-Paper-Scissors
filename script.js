@@ -104,16 +104,20 @@ const checkWinner=function(playerScore,computerScore){
 
 
 
-
-
-
-/*
-
 playAgain.addEventListener('click',function(){
   playerScore=0;
   computerScore=0;
   result.innerText=''
+  scoreWindow.innerText =playerScore + ' - ' + computerScore;
+  document.getElementById('rock').disabled=false
+  document.getElementById('paper').disabled=false
+  document.getElementById('scissors').disabled=false
 })
+
+
+/*
+
+
 
 
 
