@@ -58,16 +58,17 @@ const getComputerChoice=function(){
 let scoreWindow = document.querySelector('.scores');
 const result=document.querySelector('.result')
 const buttons=document.querySelectorAll('button')
-
-
+const playAgain=document.querySelector('.again')
 let computerScore=0;
 let playerScore=0;
 scoreWindow.innerText =playerScore + ' - ' + computerScore;
 
-/*
 
 
-*/
+
+
+
+
 buttons.forEach((button) => {
   button.addEventListener('click', () => {
      
@@ -76,22 +77,47 @@ buttons.forEach((button) => {
      playRound(playerSelection,computerSelection)
      scoreWindow.innerText=playerScore + ' - ' + computerScore;
      checkWinner(playerScore,computerScore)
-
-
-     
-  });
-
-});
+  
   
 
+  });
+ 
+});
+
+
 const checkWinner=function(playerScore,computerScore){
-  if(playerScore===5) { result.innerText=`You won ${playerScore} to ${computerScore} great job beating computer!`}
-  if(computerScore===5){  result.innerText=`You lost ${computerScore} to ${playerScore}`}
+  if(playerScore===5) { 
+    result.innerText=`You won ${playerScore} to ${computerScore} great job beating computer!`  
+    document.getElementById('rock').disabled=true
+    document.getElementById('paper').disabled=true
+    document.getElementById('scissors').disabled=true
+
+
+}
+  if(computerScore===5){ 
+     result.innerText=`You lost ${computerScore} to ${playerScore}`
+     document.getElementById('rock').disabled=true
+     document.getElementById('paper').disabled=true
+     document.getElementById('scissors').disabled=true
+}
 }
 
 
 
+
+
+
 /*
+
+playAgain.addEventListener('click',function(){
+  playerScore=0;
+  computerScore=0;
+  result.innerText=''
+})
+
+
+
+
 const rockBtn=document.querySelector('#rock')
 const paperBtn=document.querySelector('#paper')
 const scissorsBtn=document.querySelector('#scissors')
