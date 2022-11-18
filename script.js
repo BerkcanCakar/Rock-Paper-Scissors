@@ -93,13 +93,17 @@ const checkWinner=function(playerScore,computerScore){
     document.getElementById('scissors').disabled=true
 
 
+
 }
   if(computerScore===5){ 
+
      result.innerText=`You lost ${computerScore} to ${playerScore}`
      document.getElementById('rock').disabled=true
      document.getElementById('paper').disabled=true
      document.getElementById('scissors').disabled=true
+    
 }
+
 }
 
 
