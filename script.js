@@ -87,7 +87,7 @@ buttons.forEach((button) => {
 
 const checkWinner=function(playerScore,computerScore){
   if(playerScore===5) { 
-    result.innerText=`You won ${playerScore} to ${computerScore} great job beating computer!`  
+    result.innerText=`You won ${playerScore} to ${computerScore} great job!`  
     document.getElementById('rock').disabled=true
     document.getElementById('paper').disabled=true
     document.getElementById('scissors').disabled=true
@@ -111,7 +111,7 @@ const checkWinner=function(playerScore,computerScore){
 playAgain.addEventListener('click',function(){
   playerScore=0;
   computerScore=0;
-  result.innerText=''
+  result.innerText='start game!'
   scoreWindow.innerText =playerScore + ' - ' + computerScore;
   document.getElementById('rock').disabled=false
   document.getElementById('paper').disabled=false
